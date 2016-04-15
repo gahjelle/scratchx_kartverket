@@ -20,11 +20,11 @@
     };
 
     ext.breddegrad = function(grader) {
-        return 141
+        return 67
     };
 
     ext.lengdegrad = function(grader) {
-        return -75
+        return 38
     };
 
     // Block and block menu descriptions
