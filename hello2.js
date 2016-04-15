@@ -8,6 +8,11 @@
         return {status: 2, msg: 'Ready'};
     };
 
+    ext.do_nothing = function() {
+        // Code that gets executed when the block is run
+    };
+
+
     ext.power = function(base, exponent) {
         return Math.pow(base, exponent);
     };
@@ -16,10 +21,11 @@
     var descriptor = {
         blocks: [
             // Block type, block name, function name, param1 default value, param2 default value
+            [' ', 'geirArne slapper av', 'do_nothing'],
             ['r', '%n ^ %n', 'power', 2, 3],
         ]
     };
 
     // Register the extension
-    ScratchExtensions.register('Sample extension', descriptor, ext);
+    ScratchExtensions.register('Kartverket - Leaflet', descriptor, ext);
 })({});
