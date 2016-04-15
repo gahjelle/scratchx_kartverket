@@ -1,4 +1,9 @@
 (function(ext) {
+
+    var _centerX = 64;
+    var _centerY = 14;
+    var _zoom = 6;
+
     // Cleanup function when the extension is unloaded
     ext._shutdown = function() {};
 
@@ -8,8 +13,10 @@
         return {status: 2, msg: 'Ready'};
     };
 
-    ext.do_nothing = function(centerX, centerY, Z) {
-        // Code that gets executed when the block is run
+    ext.sett_kart = function(centerX, centerY, Z) {
+        _centerX = centerX;
+        _centerY = centerY;
+        _zoom = Z;
     };
 
     ext.breddegrad = function(grader) {
@@ -25,9 +32,9 @@
         blocks: [
             // Block type, block name, function name, param1 default value, param2 default value
             [' ', 'sett sentrum bredde: %n lengde: %n zoom: %n', 'do_nothing',
-             64, 14, 6],
-            ['r', 'breddegrad %n', 'breddegrad'],
-            ['r', 'lengdegrad %n', 'lengdegrad'],
+             _centerX, _centerY, _zoom],
+            ['r', 'breddegrad %n', 'breddegrad', _centerX],
+            ['r', 'lengdegrad %n', 'lengdegrad', _centerY],
         ]
     };
 
